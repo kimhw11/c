@@ -1,0 +1,58 @@
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int count_strike();
+int count_ball();
+int a1,b1,c1; //정답
+
+int main(void) {
+	int a2,b2,c2;
+	scanf("%d %d %d", &a1, &b1, &c1);
+
+	while (1) {
+		scanf("%d %d %d", &a2, &b2, &c2);
+		if (count_strike(a2,b2,c2) == 3) {
+			printf("%dS%dB", count_strike(a2, b2, c2), count_ball(a2, b2, c2));
+			break;
+		}
+		else {
+			printf("%dS%dB", count_strike(a2, b2, c2), count_ball(a2, b2, c2));
+		}
+	}
+}	
+
+int count_strike(int a2, int b2, int c2) {
+	int strike = 0;
+	if (a1 == a2) {
+		strike += 1;
+	}
+	if (b1 == b2) {
+		strike += 1;
+	}
+	if (c1 == c2) {
+		strike += 1;
+	}
+	return strike;
+}
+
+int count_ball(int a2, int b2, int c2) {
+	int ball = 0;
+	if (a1 != a2) {
+		if (a2 == b1 || a2 == c2) {
+			ball += 1;
+		}
+	}
+	if (b1 != b2) {
+		if (b2 == a1 || b2 == c1) {
+			ball += 1;
+		}
+	}
+	if (c1 != c2) {
+		if (c2 == a1 || c2 == b1) {
+			ball += 1;
+		}
+	return ball;
+	}
+	
+
+}
