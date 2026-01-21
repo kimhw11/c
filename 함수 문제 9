@@ -1,0 +1,42 @@
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int is_prime(int x);
+int next_prime(int x);
+int count = 0;
+
+int main(void) {
+	int n,m;
+	scanf("%d %d", &n, &m);
+	n += 1;
+
+	while (count != m) {
+		if (count == m) {
+			break;
+		}
+		else {
+			if (is_prime(n) == 1) {
+				int result = next_prime(n);
+				printf("%d ", result);
+				count += 1;
+			}
+		}
+		n += 1;
+	}
+}
+
+int is_prime(int x) {
+	for (int i = 1;i <= x;i++) {
+		if (x % i == 0 && i != 1 && i != x) { //소수가 아님
+			return 0;
+		}
+		else {
+			continue;
+		}
+	}
+	return 1;
+}
+
+int next_prime(int x) {
+	return x;
+}
