@@ -1,0 +1,61 @@
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	printf("222222\n");
+	printf("2    2\n");
+	printf("2    2\n");
+	printf("222222");
+}
+
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	printf("   A   \n");
+	printf("  A A  \n");
+	printf(" A   A \n");
+	printf("A A A A");
+}
+
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	int num;
+	scanf("%d", &num);
+
+	printf("%d%d%d%d%d%d\n", num,num,num,num,num,num);
+	printf("%d    %d\n", num,num);
+	printf("%d    %d\n", num,num);
+	printf("%d%d%d%d%d%d\n", num, num, num, num, num, num);
+}
+
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	printf("My birthday is month 3 date 5.");
+
+}
+
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	scanf("%d", &a);
+	scanf("%d", &b);
+	printf("My birthday is month %d date %d.", a,b);
+
+}
+
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	scanf("%d %d", &a,&b);
+	printf("My birthday is month %d date %d.", a,b);
+
+}
