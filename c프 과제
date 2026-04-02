@@ -93,3 +93,102 @@ int main() {
 		printf("N");
 	}
 }
+--------------------------------------------------------
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	char s;
+	int n;
+	scanf("%c %d", &s, &n);
+
+	if (s >= 'a' && s <= 'z') {
+		if (n + s > 'z') {
+			n = (n + s) % 'z' - 1;
+			printf("%c", 'a' + n);
+		}
+		
+		else {
+			printf("%c", n + s);
+		}
+	}
+
+	else if (s >= 'A' && s <= 'Z') {
+		if (n + s > 'Z') {
+			n = (n + s) % 'Z' - 1;
+			printf("%c", 'A' + n);
+		}
+
+		else {
+			printf("%c", n + s);
+		}
+	}
+
+	else {
+		printf("%c", s);
+	}
+}
+---------------------------------------
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main() {
+	int a,b,c,sum = 0,cnt = 0, is100 = 0;
+	double avg;
+
+	scanf("%d %d %d", &a,&b,&c);
+
+	if (a < 70) {
+		cnt += 1;
+	}
+
+	if (b < 70) {
+		cnt += 1;
+	}
+
+	if (c < 70) {
+		cnt += 1;
+	}
+
+	if (a == 100 || b == 100 || c == 100) {
+		is100 = 1;
+	}
+
+	avg = sum / 3.0;
+
+	if (cnt >= 2) {
+		if (is100 == 0) {
+			printf("F\n");
+			printf("%.2lf", avg);
+		}
+		else {
+			if (avg >= 85) {
+				printf("A\n");
+				printf("%.2lf", avg);
+			}
+			else if (avg >= 70) {
+				printf("B\n");
+				printf("%.2lf", avg);
+			}
+			else {
+				printf("F\n");
+				printf("%.2lf", avg);
+			}
+		}
+	}
+	else {
+		if (avg >= 85) {
+			printf("A\n");
+			printf("%.2lf", avg);
+		}
+		else if (avg >= 70) {
+			printf("B\n");
+			printf("%.2lf", avg);
+		}
+		else {
+			printf("F\n");
+			printf("%.2lf", avg);
+		}
+	}
+}	
+
