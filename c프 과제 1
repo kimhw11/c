@@ -242,4 +242,111 @@ int main() {
 		}
 	}
 }	
+----------------------------------------------
+#include <stdio.h>
+#pragma warning (disable : 4996)
 
+int main() {
+	char grade = ' ';
+	int a,b,c,d,e, sum = 0, cnt_g = 0, cnt_b = 0, max = -1, min = 101;
+	double avg;
+
+	scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+
+	sum += a;
+	if (a == 100) {
+		cnt_g += 1;
+	}
+	if (a < 70) {
+		cnt_b += 1;
+	}
+	if (a >= max) {
+		max = a;
+	}
+	if (a <= min) {
+		min = a;
+	}
+
+	sum += b;
+	if (b == 100) {
+		cnt_g += 1;
+	}
+	if (b < 70) {
+		cnt_b += 1;
+	}
+	if (b >= max) {
+		max = b;
+	}
+	if (a <= min) {
+		min = b;
+	}
+
+	sum += c;
+	if (c == 100) {
+		cnt_g += 1;
+	}
+	if (c < 70) {
+		cnt_b += 1;
+	}
+	if (c >= max) {
+		max = c;
+	}
+	if (c <= min) {
+		min = c;
+	}
+
+	sum += d;
+	if (d == 100) {
+		cnt_g += 1;
+	}
+	if (d < 70) {
+		cnt_b += 1;
+	}
+	if (d >= max) {
+		max = d;
+	}
+	if (d <= min) {
+		min = d;
+	}
+
+	sum += e;
+	if (e == 100) {
+		cnt_g += 1;
+	}
+	if (e < 70) {
+		cnt_b += 1;
+	}
+	if (e >= max) {
+		max = e;
+	}
+	if (e <= min) {
+		min = e;
+	}
+
+	avg = sum / 5.0;
+
+	if (avg > +85) {
+		grade = 'A';
+	}
+	else if (avg >= 70) {
+		grade = 'B';
+	}
+	else {
+		grade = 'F';
+	}
+
+	printf("%c %.2lf\n", grade, avg);
+	
+	if (cnt_g >= 2) {
+		printf("Good\n");
+	}
+	if (avg >= 90.0 && cnt_b == 0) {
+		printf("Excellent\n");
+	}
+	if (cnt_b != 0) {
+		printf("Bad\n");
+	}
+	if (max - min >= 30) {
+		printf("Unbalanced");
+	}
+}
