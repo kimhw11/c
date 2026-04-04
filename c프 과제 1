@@ -24,7 +24,58 @@ int main() {
 	printf("%.2lf", avg);
 }
 -----------------------------------------
+#include <stdio.h>
+#pragma warning (disable : 4996)
 
+int main() {
+	int y1, m1, d1, y2, m2, d2, y3, m3, d3;
+
+	scanf("%d/%d/%d %d/%d/%d %d/%d/%d", &y1, &m1, &d1, &y2, &m2, &d2, &y3, &m3, &d3);
+
+	int yr = y1, mr = m1, dr = d1;
+	
+	if (y2 < yr) {
+		yr = y2;
+		mr = m2;
+		dr = d2;
+	}
+
+	else if (y2 == yr) {
+		if (m2 < mr) {
+			mr = m2;
+			dr = d2;
+		}
+
+		else if (m2 == mr) {
+			if (d2 < dr) {
+				dr = d2;
+			}
+		}
+	}
+
+
+	if (y3 < yr) {
+		yr = y3;
+		mr = m3;
+		dr = d3;
+	}
+
+	else if (y3 == yr) {
+		if (m3 < mr) {
+			mr = m3;
+			dr = d3;
+		}
+
+		else if (m3 == mr) {
+			if (d3 < dr) {
+				dr = d3;
+			}
+		}
+	}
+
+	printf("%d/%02d/%02d", yr,mr,dr);
+
+}
 -----------------------------------------
 #pragma warning (disable : 4996)
 #include <stdio.h>
